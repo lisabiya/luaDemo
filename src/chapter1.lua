@@ -3,23 +3,53 @@
 --- Created by wkx.
 --- DateTime: 2019/5/28 17:31
 ---
-module = {}
+chapter1 = {}
 
 -- 定义一个常量
-module.constant = "这是一个常量"
+chapter1.constant = "这是一个常量"
 
-function module.func1()
-    io.write("这是一个公有函数！\n")
-    io.write("这是一个公有函数！\n")
-    io.write("这是一个公有函数！\n")
+function chapter1.add()
+    value = "1" + 1
+    return value + 3
 end
 
-local function func2()
-    print("这是一个私有函数！")
+function chapter1.show()
+    function funcName()
+        for i = 1, 10 do
+            value = factorial1(i)
+            print(value)
+        end
+    end
+    funcName()
 end
 
-function module.func3()
-    func2()
+function addString(a, b)
+    newString = a .. b
+    print(newString)
+    print(#a)
 end
 
-print(module.func3())
+function nameIt(name)
+    print(name)
+end
+
+function table()
+    local tbl = { "apple", "pear", "orange", "grape" }
+    --for key, value in pairs(tbl) do
+    --    print("key="..key.." and  value=" .. value)
+    --end
+
+    for i = 1, 4 do
+        print(tbl[i])
+    end
+end
+
+function factorial1(n)
+    if n == 0 then
+        return 1
+    else
+        return n * factorial1(n - 1)
+    end
+end
+
+

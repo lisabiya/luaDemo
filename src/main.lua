@@ -5,5 +5,12 @@
 ---
 
 require("user")
+require("chapter1")
+require("chapter2")
+--user.func1()
+--
+--print(user.html)
 
-user.func1()
+--print(chapter1.show())
+
+print(chapter2.show())

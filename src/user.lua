@@ -23,3 +23,12 @@ end
 function user.func3()
     func2()
 end
+
+user.html = [[
+<html>
+<head></head>
+<body>
+    <a href="http://www.runoob.com/">菜鸟教程</a>
+</body>
+</html>
+]]
