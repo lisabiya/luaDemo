@@ -3,10 +3,12 @@
 --- Created by linzi.
 --- DateTime: 2019/5/28 23:50
 ---
+
 chapter2 = {}
+local abs = 6
 
 function chapter2.show()
-    show1()
+    move()
 end
 
 function show1()
@@ -16,17 +18,56 @@ function show1()
     --            return key.."="..val;
     --        end
     --);
-
+    abs = "改变"
     testFun(tab, printMe)
 end
 
 function printMe(a, b)
-    print(a .. "####" .. b)
+    print(a .. "##" .. abs .. "##" .. b)
 end
 
 -- function_test2.lua 脚本文件
 function testFun(tab, fun)
     for k, v in pairs(tab) do
-        print(fun(k, v));
+        printLine(k)
+        fun(k, v);
     end
 end
+
+x = 1
+y = "add"
+
+function replace()
+    x, y = y, x
+    site = {}
+    print(x .. y)
+    printLine("索引")
+    site["key"] = "www.runoob.com"
+    print(site["key"])
+    print(site.key)
+end
+
+function faceObject ()
+    printLine("acc")
+    acc = Account
+    print(acc.balance)
+    acc.balance = 100
+    print(acc.balance)
+    acc.withdraw(10)
+    print(Account.balance)
+end
+
+Account = { balance = 0 }
+function Account.withdraw (v)
+    Account.balance = Account.balance - v
+end
+
+function move()
+    for i = 0, 200, 40 do
+        print(i)
+    end
+    print("1")
+end
+
+
+
