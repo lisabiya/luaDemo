@@ -6,7 +6,7 @@
 chapter3 = {}
 
 function chapter3.show()
-    rep2()
+    findMax()
 end
 
 function move1()
@@ -33,4 +33,30 @@ function rep2()
         print(i)
 
     end
+end
+
+function findMax()
+    numArray = { 1, 10, 23, 12, 5, 102, 5656, 5, 8 }
+    print(addParams(1, 15, 156))
+end
+
+function addParams(...)
+    pa1 = { 1, 22, 333, 4444 ;55555}
+    pa2 = { aa = 1, bb = 22, cc = 333 }
+    printLine("多参数")
+    for i, v in ipairs { ... } do
+        print(i, v)
+    end
+    printLine("数组")
+    for i, v in ipairs(pa1) do
+        print(i, v)
+    end
+    printLine("Map")
+    for k, v in pairs(pa2) do
+        print(k, v)
+    end
+    printLine("个数")
+    print("多参数="..#{ ... })
+    print("数组="..#pa1)
+    print("Map="..#pa2)
 end

@@ -8,7 +8,7 @@ chapter2 = {}
 local abs = 6
 
 function chapter2.show()
-    move()
+    show1()
 end
 
 function show1()

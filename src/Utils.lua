@@ -11,3 +11,19 @@ function printLine(word)
     end
     print("\n********************" .. word .. "*******************************")
 end
+
+function maximum (a)
+    local min = a[1]            -- 最大值索引
+    local max = a[1]          -- 最大值
+    for i, val in ipairs(a) do
+        if val > max then
+            max = val
+        end
+        if val < min then
+            min = val
+        end
+
+    end
+    return max, min
+end
+
