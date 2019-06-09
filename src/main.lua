@@ -9,10 +9,6 @@ require("chapter1")
 require("chapter2")
 require("chapter3")
 require("Utils")
---user.func1()
---
---print(user.html)
+require("chapter4")
 
---print(chapter1.show())
-
-print(chapter3.show())
+print(relationship(10,20))

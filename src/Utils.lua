@@ -27,3 +27,11 @@ function maximum (a)
     return max, min
 end
 
+function printWeb()
+    local http = require("socket.http")
+    local url = "http://www.baidu.com"
+    local resp = http.request(url)
+    print(string.find(resp, "你"))
+    print(string.sub(resp,1389,1391))
+
+end

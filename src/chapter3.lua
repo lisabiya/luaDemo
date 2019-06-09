@@ -7,6 +7,7 @@ chapter3 = {}
 
 function chapter3.show()
     findMax()
+    --printWeb()
 end
 
 function move1()
@@ -41,22 +42,32 @@ function findMax()
 end
 
 function addParams(...)
-    pa1 = { 1, 22, 333, 4444 ;55555}
+    pa1 = { 1, 22, 333, 4444; 55555 }
     pa2 = { aa = 1, bb = 22, cc = 333 }
     printLine("多参数")
     for i, v in ipairs { ... } do
         print(i, v)
     end
+
     printLine("数组")
     for i, v in ipairs(pa1) do
         print(i, v)
     end
+
     printLine("Map")
     for k, v in pairs(pa2) do
         print(k, v)
     end
+
     printLine("个数")
-    print("多参数="..#{ ... })
-    print("数组="..#pa1)
-    print("Map="..#pa2)
+    print("多参数=" .. #{ ... })
+    print("数组=" .. #pa1)
+    print("Map=" .. #pa2)
+
+    printLine("多参数2")
+    for i = 1,select('#', ...) do
+       local arg= select(i,...)
+        print(arg)
+    end
+
 end
