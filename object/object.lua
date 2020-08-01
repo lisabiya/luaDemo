@@ -15,20 +15,19 @@ end
 
 --__index 元方法 function
 function func2()
+    local metatable = {}
+    function metatable.get()
+        return "metatable.get()"
+    end
+
     mytable = setmetatable({ key1 = "value1" }, {
-        __index = function(_, key)
-            return key
-            --if key == "key2" then
-            --    return "metatablevalue"
-            --else
-            --    return nil
-            --end
-        end
+        __index = metatable
     })
-    print(mytable.key1, mytable.get)
+    print(metatable.get())
+    print(mytable.key1, mytable.get())
 end
 
---func2()
+func2()
 
 
 --__newindex 元方法
@@ -129,4 +128,4 @@ function funcObject()
     r1:printArea()
     r2:printArea()
 end
-funcObject()
+--funcObject()
