@@ -15,19 +15,20 @@ end
 
 --__index 元方法 function
 function func2()
-    local metatable = {}
-    function metatable.get()
+    local metatable = { key = 1 }
+    function metatable:get()
+        print(self.key)
         return "metatable.get()"
     end
 
     mytable = setmetatable({ key1 = "value1" }, {
         __index = metatable
     })
-    print(metatable.get())
-    print(mytable.key1, mytable.get())
+    print(metatable:get())
+    print(mytable.key1, mytable:get())
 end
 
-func2()
+--func2()
 
 
 --__newindex 元方法
@@ -97,11 +98,9 @@ function func5()
 end
 --func5()
 
-
-Rectangle = { area = 0, length = 0, breadth = 0 }
 function funcObject()
     -- 元类
-
+    Rectangle = { area = 0, length = 0, breadth = 0 }
     -- 派生类的方法 new
     function Rectangle:new (o, length, breadth)
         o = o or {}
@@ -129,3 +128,13 @@ function funcObject()
     r2:printArea()
 end
 --funcObject()
+
+function funcObject1()
+    ormDb = require("object.OrmDb")
+    local db1 = ormDb:new({ tag = "db1" })
+    db1:rows()
+    --local db2 = ormDb:new({ tag = "db2" })
+    --db2:rows()
+end
+
+funcObject1()
